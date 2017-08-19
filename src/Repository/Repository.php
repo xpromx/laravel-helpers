@@ -71,7 +71,7 @@ abstract class Repository {
        
        $this->model->update( $data );
 
-       $this->storage( $data );
+       //$this->storage( $data );
 
        return $this->model;
     }
@@ -103,7 +103,7 @@ abstract class Repository {
 
        $this->model = $this->model->create( $data );
 
-       $this->storage( $data );
+       //$this->storage( $data );
 
        return $this->model;
     }
