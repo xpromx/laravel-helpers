@@ -59,11 +59,11 @@ if (! function_exists('is_active')) {
     * @param String $needle
     * @return String
     */
-    function is_active( $haystack, $needle )
+    function is_active( $haystack, $needle, $class='active' )
     {
         if( $haystack == $needle )
         {
-            return config('travelience.active');
+            return $class;
         }
 
         return '';
@@ -239,13 +239,14 @@ if (! function_exists('is_route_active')) {
     * return the string 'active' for the class in the menu
     *
     * @param String $route
+    * @param String $class
     * @return String
     */
-    function is_route_active( $route )
+    function is_route_active( $route, $class='active' )
     {
         if( is_route($route) )
         {
-            return config('travelience.active');
+            return $class;
         }
 
         return false;
@@ -261,13 +262,14 @@ if (! function_exists('is_route_active')) {
     * return the string 'active' for the class in the menu
     *
     * @param String $route
+    * @param String $class
     * @return String
     */
-    function is_route_path_active( $route )
+    function is_route_path_active( $route, $class='active' )
     {
         if( is_route_path($route) )
         {
-            return config('travelience.active');
+            return $class
         }
 
         return false;
@@ -281,13 +283,14 @@ if (! function_exists('is_page_active')) {
     * Return the String 'active' if the current page include the given String
     *
     * @param String $page
+    * @param String $class
     * @return String
     */
-    function is_page_active( $page )
+    function is_page_active( $page, $class='active' )
     {
         if( is_page($page) )
         {
-            return config('travelience.active');
+            return $class;
         }
 
         return false;
@@ -323,16 +326,17 @@ if (! function_exists('is_route_path_active')) {
         * return the string 'active' for the class in the menu
         *
         * @param String $route
+        * @param String $class
         * @return String
         */
-    function is_route_path_active( $route )
+    function is_route_path_active( $route, $class='active' )
     {
         if( is_route_path($route) )
         {
-            return config('travelience.active');
+            return $class;
         }
 
-        return '';
+        return false;
     }
 
 }
