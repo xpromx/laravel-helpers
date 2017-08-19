@@ -5,7 +5,7 @@ namespace Travelience\Helpers;
 use Illuminate\Support\ServiceProvider;
 use Route;
 
-class HelpersServiceProvider extends ServiceProvider
+class HelperServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
