@@ -269,7 +269,7 @@ if (! function_exists('is_route_active')) {
     {
         if( is_route_path($route) )
         {
-            return $class
+            return $class;
         }
 
         return false;
