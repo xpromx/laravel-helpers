@@ -71,7 +71,7 @@ abstract class Repository {
        
        $this->model->update( $data );
 
-       //$this->storage( $data );
+       $this->storage( $data );
 
        return $this->model;
     }
@@ -103,7 +103,7 @@ abstract class Repository {
 
        $this->model = $this->model->create( $data );
 
-       //$this->storage( $data );
+       $this->storage( $data );
 
        return $this->model;
     }
@@ -259,6 +259,28 @@ abstract class Repository {
         $fields[] = 'token';
 
         return $fields;
+    }
+
+
+    /**
+    * Stoage Photos in this model
+    *
+    * @param Array $data
+    * @return void
+    */
+    public function storage( $data=[] )
+    {
+
+         if( isset($data['photo']) )
+         {
+             $this->model->storage()->attach( $data['photo'], 'photo');
+         }
+
+         if( isset($data['gallery']) )
+         {
+             $this->model->storage()->attach( $data['gallery'], 'gallery');
+         }
+         
     }
 
  
