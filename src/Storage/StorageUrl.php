@@ -12,17 +12,35 @@ class StorageUrl extends BaseUrlGenerator implements UrlGenerator
      *
      * @return string
      */
-    public function getUrl()
+    public function getUrl() : string
     {
-
+        
       if( !$domain = config('laravel-medialibrary.s3.domain') )
       {
           $domain  = config('app.url');
       }
 
-      return $domain.$this->getPathRelativeToRoot();
+      return $domain . $this->getBaseMediaDirectory() . '/' . $this->getPathRelativeToRoot();
 
     }
+
+    /*
+     * Get the path where the whole medialibrary is stored.
+     */
+    protected function getStoragePath() : string
+    {
+        return $this->config->get("filesystems.disks.{$this->media->disk}.root");
+    }
+
+    /*
+     * Get the directory where all files of the media item are stored.
+     */
+    protected function getBaseMediaDirectory(): string
+    {
+        return str_replace(public_path(), '', $this->getStoragePath());
+    }
+
+
 }
 
 ?>

@@ -8,7 +8,7 @@
 		public function registerMediaConversions()
 	  {
 
-	    	foreach( config('laravel-medialibrary.conversions') as $key => $sizes )
+	    	foreach( config('medialibrary.conversions') as $key => $sizes )
 	    	{
 	    		$this->addMediaConversion( $key )
 	             	 ->setManipulations( $sizes )
