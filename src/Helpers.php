@@ -537,7 +537,7 @@ if (! function_exists('array_to_table')) {
     */
     function array_to_table($data, $class='', $style='')
     {
-        $html = "<table class='table {$class}' style='font-family:Arial; font-size:14px; cellpadding='10'>";
+        $html = "<table class='table {$class}' style='font-family:Arial; font-size:14px;' cellpadding='10'>";
 
         if( $data )
         {
@@ -545,7 +545,7 @@ if (! function_exists('array_to_table')) {
             {
                 $html .= "<tr >";
 
-                $html .= "<td width='140' style='{$style}' ><b>" . Str::title($key) . "</b></td>";
+                $html .= "<td width='140' style='{$style}'><b>" . Str::title($key) . "</b></td>";
                 $html .= "<td style='{$style}'>{$value}</td>";
 
                 $html .= "</tr>";
