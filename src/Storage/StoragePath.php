@@ -14,7 +14,7 @@ class StoragePath implements PathGenerator
      *
      * @return string
      */
-    public function getPath(Media $media)
+    public function getPath(Media $media) : string
     {
         return $this->getFolder( $media ) . '/';
     }
@@ -26,7 +26,7 @@ class StoragePath implements PathGenerator
      *
      * @return string
      */
-    public function getPathForConversions(Media $media)
+    public function getPathForConversions(Media $media) : string
     {
         return $this->getFolder( $media ). '/th/';
     }
@@ -38,7 +38,7 @@ class StoragePath implements PathGenerator
      *
      * @return string
      */
-    public function getFolder( Media $media )
+    public function getFolder( Media $media ) : string
     {
         $year   = date("Y", strtotime($media->created_at));
         $month  = date("m", strtotime($media->created_at));
