@@ -28,7 +28,6 @@ class Storage
     public function attach( $files, $collection='default' )
     {
 
-        $this->clearCollection();
 
         if( $files )
         {
