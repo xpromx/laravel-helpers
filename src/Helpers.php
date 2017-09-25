@@ -308,7 +308,7 @@ if (! function_exists('is_page')) {
     */
     function is_page( $page )
     {
-        if(preg_match('/('. $page .')/i' , current_url() , $m) === 1)
+        if( str_contains( $page, request()->server('REQUEST_URI') ) )
         {
             return true;
         }
